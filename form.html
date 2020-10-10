@@ -1,0 +1,123 @@
+<!-- 
+========= When we want getting/input data/info from User, we can form tag.
+
+<form>
+ 		11 tag/element 
+	
+	1. Textbox
+		<input type="text" />
+
+	2. Password
+		<input type="password" />
+
+	3. Radio Button
+		<input type="radio" />
+	
+	4. Checkbox
+		<input type="checkbox" />
+
+	5. Textarea
+		<textarea></textarea>
+
+	6. Dropdown/Select box
+		<select>
+			<option></option>
+		</select>
+
+	7. Button
+		<input type="button" />
+
+	8. Reset Button
+		<input type="reset" />
+
+	9. Submit Button
+		*<input type="submit" />
+	ths submit button is responsible for data sending to server.
+
+	10. Hidden
+		<input type="hidden" />
+	
+	11. File
+		<input type="file" />
+
+
+
+</form>
+
+<br />
+line break
+
+
+
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Form</title>
+</head>
+<body>
+<center><h2>Registration</h2></center>
+<form>
+	<input type="hidden">
+	<table align="center" width="400" cellpadding="5">
+		<tr>
+			<td>First Name</td>
+			<td><input value="Rohit" type="text" placeholder="First Name" /></td>
+		</tr>
+		<tr>
+			<td>Last Name</td>
+			<td><input disabled="disabled" type="text" placeholder="Last Name" /></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" placeholder="Password" /></td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td>Male <input type="radio" name="gender"/>
+				Female <input type="radio" checked="checked" name="gender"/>
+			</td>
+		</tr>
+		<tr>
+			<td>Hobby</td>
+			<td>Cricket <input type='checkbox' />
+				Footabll <input checked="checked" type='checkbox' />
+				<br />
+				Music <input checked="checked" type='checkbox' />
+				Internet <input type='checkbox' />
+			</td>
+		</tr>
+		<tr>
+			<td>Address</td>
+			<td><textarea placeholder="Address" rows="5" cols="30"></textarea></td>
+		</tr>
+		<tr>
+			<td>City</td>
+			<td><select>
+					<option>Select</option>
+					<option>Indore</option>
+					<option>Ujjain</option>
+					<option selected="selected">Mumbai</option>
+					<option>Pune</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>File</td>
+			<td><input type="file" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="button" value="OK" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="reset" value="Clear" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="Save" /></td>
+		</tr>
+
+
+	</table>
+</form>
+</body>
+</html>
