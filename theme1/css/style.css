@@ -15,8 +15,9 @@ body{
 }
 .content{
 	background-color: #A7A7A7;
-	height: 800px;
+	min-height: 800px;
 	width: 100%;
+	overflow: hidden;
 }
 .logo{
 	width: 100%;
@@ -99,4 +100,124 @@ body{
 }
 .right-header-top ul li a:hover{
 	text-decoration: underline;
+}
+.left-menu{
+	float: left;
+	width: 250px;
+}
+.right-menu{
+	float: left;
+	width: 760px;
+}
+.left-menu h4{
+	color: #FFF;
+	margin: 0;
+	padding: 11px;
+	text-transform: uppercase;
+	font-weight: normal;
+
+}
+.right-menu ul{
+	margin: 0;
+	padding: 0;
+}
+.right-menu ul li{
+	list-style: none;
+	float: left;
+}
+.right-menu ul li a{
+	display: inline-block;
+	color: #FFF;
+	text-decoration: none;
+	padding: 11px 25px;
+}
+.right-menu ul li a:hover{
+	background-color: #191A1A;
+
+}
+.left-content{
+	float: left;
+	width: 250px;
+	/*background-color: #FFF;*/
+	min-height: 800px;
+}
+.right-content{
+	float: left;
+	width: 730px;
+	margin-left: 30px;
+	/*background-color: blue;*/
+	min-height: 800px;
+}
+.left-content-menu{
+	background-color: #FFF;
+}
+.left-content-menu ul{
+	margin: 0;
+	padding: 0;
+}
+.left-content-menu ul li{
+	list-style: none;
+}
+.left-content-menu ul li a{
+	text-decoration: none;
+	display: block;
+	
+	padding: 15px 20px;
+	color: #4a4c4c;
+	font-size: 15px;
+	border-bottom: 1px solid #808484;
+}
+.left-content-box{
+	width: 250px;
+	height: 300px;
+	background-color: #FFF;
+	margin: 20px 0;
+}
+.slider{
+	width: 730px;
+	height: 300px;
+	background-color: #FFCB75;
+}
+.product{
+	width: 730px;
+	min-height: 400px;
+	overflow: hidden;
+	background-color: #FFF;
+	margin: 20px 0;
+}
+.product h4{
+	text-transform: uppercase;
+	padding: 10px;
+	border-bottom: 1px solid #CCC;
+}
+.product-box{
+	float: left;
+	width: 165px;
+	height: 200px;
+	/*background-color: red;*/
+	margin: 8px;
+	border-radius: 8px;
+}
+.product-box:hover{
+	box-shadow: 0px 0px 5px #000;
+	cursor: pointer;
+}
+.product-box img{
+	height: 150px;
+	width: 165px;
+	border-radius: 8px 8px 0 0;
+}
+.product-name{
+	margin: 5px 0 0 0;
+	padding: 0;
+	text-align: center;
+	font-weight: bold;
+}
+.product-price{
+	margin: 5px 0 0 0;
+	padding: 0;
+	text-align: center;
+}
+.product-price del{
+	color: #999999;
 }
