@@ -6,7 +6,7 @@
 
 
 */
-
+echo "indore";
 
 function demo($a=100, $b=0, $z=2)
 {
@@ -19,10 +19,5 @@ function demo($a=100, $b=0, $z=2)
 	return $e;	
 }
 
-$a=demo(4, 2, 2);
 
-
-
-$x = demo(10, 12, 5);
-echo $x;
 ?>

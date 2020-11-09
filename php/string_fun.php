@@ -31,13 +31,29 @@
 	9. lcfirst()
 	10. substr()
 
+	11. stripos()
+	12. strpos("hello world", 'w');
+	13. str_replace("indore", "delhi", $a);
+	14. str_ireplace("indore", "delhi", $a);
+	15. str_repeat("indore", 10);
+	16. trim($a);
+	17. ltrim();
+	18. rtrim();
+	19. chop();
+	20. similer_text("hello world", "hello indore");
+	21. ord();
+	22. print();
+	23. explode();
+	
+
+
 
 
 
 */
 
 
-$a = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod";
+$a = "      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod    ";
 
 $b = substr($a, 0, 5);
 
