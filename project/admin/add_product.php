@@ -5,6 +5,12 @@ if(! isset($_SESSION['is_admin_logged_in']))
 	header("location:../index.php");
 }
 include("header.php");
+
+$query = "SELECT * FROM category_tbl";
+
+$result = mysqli_query($con, $query);
+
+
 ?>
 <div class="container mt-4" style="min-height: 700px">
 	<!-- <h2>Welcome Admin</h2> -->
@@ -28,10 +34,13 @@ include("header.php");
 						<label>Product Category</label>
 						<select name="category" class="form-control">
 							<option>Select</option>
-							<option value="1">Home Appliance</option>
-							<option value="2">Electronics</option>
-							<option value="3">Fashion Men</option>
-							<option value="4">Fashion Women</option>
+							<?php
+							while($data=mysqli_fetch_assoc($result))
+							{ ?>
+								<option value="<?= $data['id'] ?>"><?= $data['category_name'] ?></option>
+							<?php 
+							}
+							?>
 							
 						</select>
 					</div>

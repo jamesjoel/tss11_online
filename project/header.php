@@ -1,3 +1,8 @@
+<?php
+$query = "SELECT * FROM category_tbl";
+$result = mysqli_query($con, $query);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,11 +63,11 @@ https://templatemo.com/tm-546-sixteen-clothing
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="products.php" data-toggle="dropdown">Categories</a>
                 <div class="dropdown-menu">
-                  <a href="#" class="dropdown-item">Fashion Mens</a>
-                  <a href="#" class="dropdown-item">Fashion Womens</a>
-                  <a href="#" class="dropdown-item">Fashion Kids</a>
-                  <a href="#" class="dropdown-item">Electronics</a>
-                  <a href="#" class="dropdown-item">Home Appliance</a>
+                  <?php
+                  while($data=mysqli_fetch_assoc($result)){
+                  ?>
+                    <a href="#" class="dropdown-item"><?= $data['category_name'] ?></a>
+                  <?php } ?>
                 </div>
               </li>
               <li class="nav-item">
