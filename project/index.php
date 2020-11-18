@@ -31,7 +31,7 @@ $result = mysqli_query($con, $query);
           
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
+              <a href="#"><img style="height: 200px !important;" src="admin/product_images/<?= $data['product_img'] ?>" alt=""></a>
               <div class="down-content">
                 <a href="#"><h4><?= $data['product_name'] ?></h4></a>
                 <h6>&#8377; <?= number_format($new_price); ?>.00</h6>
