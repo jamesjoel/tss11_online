@@ -3,12 +3,14 @@ include('../db.php');
 
 // print_r($_FILES);
 $name = $_FILES['product_image']['name'];// 10.jpg
-
+// break file name into array by . sign
 $arr = explode(".", $name);
+// getting last value of array (extention)
 $ext = end($arr);
 
-
+// change file name into unqiue name
 $new_name = time().".".$ext;
+
 
 $tmpname = $_FILES['product_image']['tmp_name'];
 $size = $_FILES['product_image']['size'];
@@ -20,7 +22,7 @@ extract($_POST);
 
 if($ext == "jpg" || $ext == "png" || $ext == "gif" || $ext == "jpeg" || $ext == "bmp")
 {
-	if($size <= (1024*1024))
+	if($size <= (1024*1024)) // check 1 mb size
 	{
 
 		if($error == 0)

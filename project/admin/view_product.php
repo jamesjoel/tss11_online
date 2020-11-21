@@ -28,6 +28,7 @@ $result = mysqli_query($con, $query);
 					<th>Category</th>
 					<th>Discount</th>
 					<th>Status</th>
+					<th>Delete</th>
 				</tr>
 				<?php
 				while($data = mysqli_fetch_assoc($result))
@@ -38,7 +39,7 @@ $result = mysqli_query($con, $query);
 					}
 					else{
 						$a = "Deative";
-						$b = "btn-danger";
+						$b = "btn-warning";
 					}
 
 
@@ -49,7 +50,8 @@ $result = mysqli_query($con, $query);
 						<td><?= $data['product_price'] ?></td>
 						<td><?= $data['product_category'] ?></td>
 						<td><?= $data['discount'] ?>%</td>
-						<td><a href="#" class="btn <?= $b ?> btn-sm"><?= $a ?></a></td>
+						<td><a href="change_status.php?id=<?= $data['id'] ?>&status=<?= $data['status'] ?>" class="btn <?= $b ?> btn-sm"><?= $a ?></a></td>
+						<td><a href="delete_product.php?pid=<?= $data['id'] ?>" class="btn btn-danger btn-sm">Delete</a></td>
 					</tr>
 				<?php 
 				}

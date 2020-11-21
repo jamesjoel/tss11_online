@@ -4,7 +4,7 @@ include("db.php");
 // print_r($_SESSION);
 include("header.php");
 
-$query = "SELECT * FROM product_tbl";
+$query = "SELECT * FROM product_tbl WHERE status = 1";
 
 $result = mysqli_query($con, $query);
 
@@ -27,11 +27,12 @@ $result = mysqli_query($con, $query);
 
             $new_price = $p-($p*$d/100);
 
+          
           ?>
           
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img style="height: 200px !important;" src="admin/product_images/<?= $data['product_img'] ?>" alt=""></a>
+              <a href="product_information.php?id=<?= $data['id'] ?>"><img style="height: 200px !important;" src="admin/product_images/<?= $data['product_img'] ?>" alt=""></a>
               <div class="down-content">
                 <a href="#"><h4><?= $data['product_name'] ?></h4></a>
                 <h6>&#8377; <?= number_format($new_price); ?>.00</h6>
@@ -42,7 +43,9 @@ $result = mysqli_query($con, $query);
             </div>
           </div>
 
-          <?php } ?>
+          <?php
+
+           } ?>
         </div>
       </div>
     </div>

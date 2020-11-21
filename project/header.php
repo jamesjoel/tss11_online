@@ -85,6 +85,12 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <li class="nav-item">
                   <a class="nav-link" href="logout.php">Logout</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><?= $_SESSION['name']; ?>
+                    <img src="profile_pic/1.jpg" class="rounded-circle" height="30" width="30" />
+                  </a>
+                </li>
+
               <?php 
               }
               else

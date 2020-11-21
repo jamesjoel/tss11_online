@@ -29,6 +29,7 @@ if(mysqli_num_rows($result)==1)
 		$_SESSION["id"]=$arr['id'];
 		$_SESSION["name"]=$arr['fullname'];
 		$_SESSION["is_user_logged_in"]=true;
+		
 		header("location:index.php");
 	}
 	else
