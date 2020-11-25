@@ -24,20 +24,25 @@ $result = mysqli_query($con, $query);
 				<tr>
 					<th>S.No.</th>
 					<th>Category Name</th>
+					<th>Edit</th>
+					<th>Delete</th>
 					
 				</tr>
 				<?php
+				$n=1;
 				while($data = mysqli_fetch_assoc($result))
 				{ 
 					
 
 					?>
 					<tr>
-						<td><?= $data['id'] ?></td>
+						<td><?= $n ?></td>
 						<td><?= $data['category_name'] ?></td>
-						
+						<td><a href="edit_cate.php?id=<?= $data['id'] ?>" class="btn btn-info btn-sm">Edit</a></td>
+						<td><a href="delete_cate.php?id=<?= $data['id'] ?>" class="btn btn-danger btn-sm">Delete</a></td>
 					</tr>
 				<?php 
+				$n++;
 				}
 				?>
 

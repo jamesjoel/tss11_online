@@ -28,9 +28,11 @@ $result = mysqli_query($con, $query);
 					<th>Category</th>
 					<th>Discount</th>
 					<th>Status</th>
+					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
 				<?php
+				$n=1;
 				while($data = mysqli_fetch_assoc($result))
 				{ 
 					if($data['status']==1){
@@ -45,15 +47,17 @@ $result = mysqli_query($con, $query);
 
 					?>
 					<tr>
-						<td><?= $data['id'] ?></td>
+						<td><?= $n ?></td>
 						<td><?= $data['product_name'] ?></td>
 						<td><?= $data['product_price'] ?></td>
 						<td><?= $data['product_category'] ?></td>
 						<td><?= $data['discount'] ?>%</td>
 						<td><a href="change_status.php?id=<?= $data['id'] ?>&status=<?= $data['status'] ?>" class="btn <?= $b ?> btn-sm"><?= $a ?></a></td>
+						<td><a href="edit_product.php?id=<?= $data['id']?>" class="btn btn-info btn-sm">Edit</a></td>
 						<td><a href="delete_product.php?pid=<?= $data['id'] ?>" class="btn btn-danger btn-sm">Delete</a></td>
 					</tr>
 				<?php 
+				$n++;
 				}
 				?>
 
