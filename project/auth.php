@@ -1,19 +1,18 @@
 <?php
 // print_r($_POST);
 /*
-	INSERT
 
-	UPDATE 
+	login auth
+	singup
+	file upload
+	CRUD	
 
-	DELETE
-
-	SELECT * FROM user_tbl WHERE 
-
+whenever $_POST or $_GET is generate then $_REQUEST also generate.
 
 */
 include("db.php");
-$e = $_POST['email'];
-$p = $_POST['pass'];
+$e = $_REQUEST['email'];
+$p = $_REQUEST['pass'];
 // hello
 // nitin@gmail.com
 $query = "SELECT * FROM user_tbl WHERE email='$e'";

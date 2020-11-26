@@ -2,6 +2,8 @@
 $query = "SELECT * FROM category_tbl";
 $result = mysqli_query($con, $query);
 
+// print_r($_SERVER);
+$current_page = $_SERVER['REQUEST_URI'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,12 +58,10 @@ https://templatemo.com/tm-546-sixteen-clothing
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Home
-                  <span class="sr-only">(current)</span>
-                </a>
+                <a class="nav-link <?php if(strstr($current_page, "index.php")) echo "selected_link" ?>" href="index.php">Home</a>
               </li> 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="products.php" data-toggle="dropdown">Categories</a>
+                <a class="nav-link dropdown-toggle <?php if(strstr($current_page, "products.php")) echo "selected_link" ?>" href="products.php" data-toggle="dropdown">Categories</a>
                 <div class="dropdown-menu">
                   <?php
                   while($data=mysqli_fetch_assoc($result)){
@@ -71,16 +71,16 @@ https://templatemo.com/tm-546-sixteen-clothing
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.php">About Us</a>
+                <a class="nav-link <?php if(strstr($current_page, "about.php")) echo "selected_link" ?>" href="about.php">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.php">Contact Us</a>
+                <a class="nav-link <?php if(strstr($current_page, "contact.php")) echo "selected_link" ?>" href="contact.php">Contact Us</a>
               </li>
               <?php
               if(isset($_SESSION['is_user_logged_in']))
               { ?>
                 <li class="nav-item">
-                  <a class="nav-link" href="profile.php">Profile</a>
+                  <a class="nav-link <?php if(strstr($current_page, "profile.php")) echo "selected_link" ?>" href="profile.php">Profile</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="logout.php">Logout</a>
@@ -96,10 +96,10 @@ https://templatemo.com/tm-546-sixteen-clothing
               else
               { ?>
                 <li class="nav-item">
-                  <a class="nav-link" href="login.php">Login</a>
+                  <a class="nav-link <?php if(strstr($current_page, "login.php")) echo "selected_link" ?>" href="login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="signup.php">Signup</a>
+                  <a class="nav-link <?php if(strstr($current_page, "signup.php")) echo "selected_link" ?>" href="signup.php">Signup</a>
                 </li>
               <?php 
               }
