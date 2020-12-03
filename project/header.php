@@ -1,4 +1,19 @@
 <?php
+// print_r($_COOKIE);
+if(isset($_COOKIE['cart']))
+{
+  $a = $_COOKIE['cart']; // 18#3#7
+  $arr = explode("#", $a);
+  $total = count($arr);
+}
+else
+{
+  $total = 0;
+}
+
+
+
+
 $query = "SELECT * FROM category_tbl";
 $result = mysqli_query($con, $query);
 
@@ -104,6 +119,9 @@ https://templatemo.com/tm-546-sixteen-clothing
               <?php 
               }
               ?>
+              <li class="nav-item">
+                  <a class="nav-link <?php if(strstr($current_page, "mycart.php")) echo "selected_link" ?>" href="my_cart.php">My Cart(<?= $total; ?>)</a>
+              </li>
 
               
             </ul>

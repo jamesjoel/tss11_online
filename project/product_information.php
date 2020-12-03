@@ -31,7 +31,7 @@ $new_price = $p-($p*$d/100);
         <div class="right-image">
           <img src="admin/product_images/<?= $data['product_img'] ?>" alt="" style="height: 450px !important;">
           <div class="mt-4 text-center">
-          	<a href="#" class="btn btn-dark">Add To Cart</a>
+          	<a href="add_to_cart.php?id=<?= $data['id'] ?>" class="btn btn-dark">Add To Cart</a>
           	<a href="#" class="btn btn-dark">Buy Now</a>
           </div>
         </div>
