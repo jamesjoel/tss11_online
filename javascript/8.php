@@ -1,3 +1,14 @@
+<!-- 
+
+	document.getElementById().value
+	document.getElementById().innerHTML
+	document.getElementById().style.
+	document.getElementById().setAttrubite("", "")
+
+
+
+
+ -->
 <!DOCTYPE html>
 <html>
 <head>
