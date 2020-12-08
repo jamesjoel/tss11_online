@@ -23,27 +23,32 @@ include("header.php");
               <div class="card-body">
                 <div class="form-group">
                   <label>Full Name</label>
-                  <input name="full_name" type="text" class="form-control" placeholder="Full Name">
+                  <input name="full_name" id="full_name" type="text" class="form-control" placeholder="Full Name">
+                  <small id="full_name_msg" class="text-danger"></small>
                 </div>
                 <div class="form-group">
                   <label>Username/Email</label>
-                  <input name="email" type="text" class="form-control" placeholder="Username/Email">
+                  <input name="email" type="text" id="email" class="form-control" placeholder="Username/Email">
+                  <small id="email_msg" class="text-danger"></small>
                 </div>
                 <div class="form-group">
                   <label>Password</label>
-                  <input name="password" type="password" class="form-control" placeholder="Password">
+                  <input name="password" type="password" id="pass" class="form-control" placeholder="Password">
+                  <small id="pass_msg" class="text-danger"></small>
                 </div>
                 <div class="form-group">
                   <label>Re-Password</label>
-                  <input name="re_pass" type="password" class="form-control" placeholder="Re-Password">
+                  <input name="re_pass" type="password" id="re_pass" class="form-control" placeholder="Re-Password">
+                  <small id="re_pass_msg" class="text-danger"></small>
                 </div>
                 <div class="form-group">
                   <label>Address</label>
-                  <textarea name="address" class="form-control" placeholder="Address"></textarea>
+                  <textarea name="address" id="address" class="form-control" placeholder="Address"></textarea>
+                  <small id="address_msg" class="text-danger"></small>
                 </div>
                 <div class="form-group">
                   <label>City</label>
-                  <select name="city" class="form-control">
+                  <select name="city" id="city" class="form-control">
                     <option>Select</option>
                     <option>Indore</option>
                     <option>Ujjain</option>
@@ -51,20 +56,24 @@ include("header.php");
                     <option>Mumbai</option>
                     <option>Pune</option>
                   </select>
+                  <small id="city_msg" class="text-danger"></small>
                 </div>
                 <div class="form-group">
                   <label>Gender</label>
                   <br />
-                  Male : <input type="radio" value="male" name="gender" />
-                  Female : <input type="radio" value="female" name="gender" />
+                  Male : <input type="radio" id="male" value="male" name="gender" />
+                  Female : <input type="radio" id="female" value="female" name="gender" />
+                  <br />
+                  <small id="gender_msg" class="text-danger"></small>
                 </div>
                 <div class="form-group">
                   <label>Contact</label>
-                  <input type="text" name="contact" class="form-control" placeholder="Contact">
+                  <input type="text" name="contact" id="contact" class="form-control" placeholder="Contact">
+                  <small id="contact_msg" class="text-danger"></small>
                 </div>
               </div>
               <div class="card-footer">
-                <input type="submit" value="Signup" class="btn btn-primary">
+                <input type="submit" id="signup" value="Signup" class="btn btn-primary">
               </div>
             </div>
             </form>
@@ -74,7 +83,7 @@ include("header.php");
     </div>
 
     
-
+<script type="text/javascript" src="assets/js/val.js"></script>
    
     
     <?php

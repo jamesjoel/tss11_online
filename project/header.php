@@ -35,6 +35,8 @@ $current_page = $_SERVER['REQUEST_URI'];
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="vendor/jquery/jquery.min.js"></script>
 <!--
 
 TemplateMo 546 Sixteen Clothing
