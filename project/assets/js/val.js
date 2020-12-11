@@ -1,4 +1,26 @@
 $(document).ready(function(){
+
+  $("#email").blur(function(){
+    var a = $(this).val();
+    var reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if(a != "" && reg.test(a)==true)
+    {
+      $.ajax({
+        url : "check_username.php",
+        type : "post",
+        data : { username : a },
+        success : function(res){
+          // alert(res);
+          $("#email_msg").html(res);
+        }
+      })
+    }
+
+  });
+
+
+
     $("#signup").click(function(){
       var a = $("#full_name").val();
       var b = $("#email").val();
