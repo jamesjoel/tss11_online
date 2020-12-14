@@ -22,6 +22,7 @@ $(document).ready(function(){
 
 
     $("#signup").click(function(){
+      
       var a = $("#full_name").val();
       var b = $("#email").val();
       var c = $("#pass").val();
