@@ -56,6 +56,20 @@ class Photos extends CI_Controller{
 			redirect("photos/");
 		}
 	}
+	function delete($a, $b)
+	{
+		$this->Photos_model->delete($a);
+		$path = './assets/photos/'.$b;
+		// echo $path;die;
+		// delete photos from folder also
+		unlink($path); // this fun is remove/delete file from the computer
+		redirect("photos/");
+		
+	}
 }
+
+
+
+
 
 ?>

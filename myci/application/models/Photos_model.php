@@ -16,9 +16,11 @@ class Photos_model extends CI_Model{
 		// insert query
 		$this->db->insert($this->table_name, $arr);
 	}
-	function delete()
+	function delete($id)
 	{
-		// delete query
+		$this->db->where("id", $id);
+		$this->db->delete($this->table_name);
+		// DELETE FROM table WHERE id = $id
 	}
 	function update($id, $arr)
 	{
@@ -42,5 +44,16 @@ class Photos_model extends CI_Model{
 		return $result;		
 	}
 }
+
+
+/*
+
+SELECT * FROM student LIMIT 10, 2
+
+$this->db->limit(2, 10);
+
+
+
+*/
 
 ?>

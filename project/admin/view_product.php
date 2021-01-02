@@ -6,7 +6,7 @@ if(! isset($_SESSION['is_admin_logged_in']))
 }
 include("header.php");
 
-$query = "SELECT * FROM product_tbl";
+$query = "SELECT * FROM product_tbl LEFT JOIN category_tbl ON product_tbl.product_category = category_tbl.id";
 
 $result = mysqli_query($con, $query);
 
@@ -50,7 +50,7 @@ $result = mysqli_query($con, $query);
 						<td><?= $n ?></td>
 						<td><?= $data['product_name'] ?></td>
 						<td><?= $data['product_price'] ?></td>
-						<td><?= $data['product_category'] ?></td>
+						<td><?= $data['category_name'] ?></td>
 						<td><?= $data['discount'] ?>%</td>
 						<td><a href="change_status.php?id=<?= $data['id'] ?>&status=<?= $data['status'] ?>" class="btn <?= $b ?> btn-sm"><?= $a ?></a></td>
 						<td><a href="edit_product.php?id=<?= $data['id']?>" class="btn btn-info btn-sm">Edit</a></td>

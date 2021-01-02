@@ -38,7 +38,7 @@
 			  <img class="card-img-top" src="<?= base_url('assets/photos/'.$data['image_name']) ?>" style="height: 200px;">
 			  <div class="card-body">
 			    <small class="card-text m-0 p-0"><?= $data['title'];?></small>
-			    <a href="#" class="btn btn-danger btn-sm float-right">
+			    <a href="<?= site_url('photos/delete/'.$data['id'].'/'.$data['image_name']) ?>" class="btn btn-danger btn-sm float-right">
 			    	<i class="fa fa-times" aria-hidden="true"></i>
 			    </a>
 			  </div>
