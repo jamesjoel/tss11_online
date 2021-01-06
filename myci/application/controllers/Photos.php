@@ -1,27 +1,13 @@
 <?php
 
-class Photos extends CI_Controller{
+class Photos extends MY_Controller{
 
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->helper("url");
-		$this->load->library('session');
-		$this->load->model("User_model");
-		$this->load->model("Photos_model");
-
-
-		$this->backdoor();
-
-		$this->id = $this->session->userdata("id");
-	}
-	function backdoor()
-	{
-		if(! $this->session->userdata("is_user_logged_in"))
-			redirect("home");
-	}
+	
 	function index()
 	{
+		
+
+
 		$result = $this->Photos_model->find_by_user_id($this->id);
 		$pagedata = array("title"=>"My Photos", 'pagename'=>"user/photos", "result"=>$result);
 		$this->load->view("layout", $pagedata);

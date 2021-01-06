@@ -18,10 +18,18 @@ class Home extends CI_Controller{
 		$this->load->helper("url");
 		$this->load->model("User_model");
 		$this->load->library("session");
+		$this->load->helper("my_helper");
+		$this->load->library("demo");
+		$this->load->helper('captcha');
 	}
+
+
+	
 
 	function index()
 	{
+		// $this->load->controller()
+		// $this->demo->hello();
 		$pagedata = array("title"=>"Home Page", "pagename"=>"home");
 		$this->load->view("layout", $pagedata);
 	}
@@ -47,6 +55,7 @@ class Home extends CI_Controller{
 	}
 	function signup()
 	{
+		// $this->benchmark->mark('code_start');
 		$this->load->library("form_validation");
 
 		$this->form_validation->set_rules("full_name", "Full Name", "required");
@@ -66,6 +75,7 @@ class Home extends CI_Controller{
 		}
 		else
 		{
+
 			// $_POST
 			// print_r($this->input->post());
 			$saveArr['full_name']=$this->input->post("full_name");
@@ -85,10 +95,8 @@ class Home extends CI_Controller{
 
 		}
 
-
-
-
-
+		// $this->benchmark->mark('code_end');
+		// echo $this->benchmark->elapsed_time('code_start', 'code_end');
 
 	}
 
@@ -99,31 +107,44 @@ class Home extends CI_Controller{
 		// print_r($this->input->post());
 		$u = $this->input->post("username");
 		$p = sha1($this->input->post("password"));
-
+		$c = $this->input->post("captcha");
 		$result=$this->User_model->find_by_username($u);
 
-		if($result->num_rows() == 1)
+		if($c == $this->session->userdata("captcha"))
 		{
-			// mysqli_fetch_assoc
 
-			$data = $result->row_array();
-			if($data['password']==$p)
+
+
+
+
+			if($result->num_rows() == 1)
 			{
-				$this->session->set_userdata("id", $data['id']);
-				$this->session->set_userdata("name", $data['full_name']);
-				$this->session->set_userdata("is_user_logged_in", true);
-				redirect("user");
+				// mysqli_fetch_assoc
+
+				$data = $result->row_array();
+				if($data['password']==$p)
+				{
+					$this->session->set_userdata("id", $data['id']);
+					$this->session->set_userdata("name", $data['full_name']);
+					$this->session->set_userdata("is_user_logged_in", true);
+					redirect("user");
+				}
+				else
+				{
+					$this->session->set_flashdata("msg", "This Password is Incorrect !");
+					redirect("home/login");	
+				}
 			}
 			else
 			{
-				$this->session->set_flashdata("msg", "This Password is Incorrect !");
-				redirect("home/login");	
+				$this->session->set_flashdata("msg", "This Username and Password is Incorrect !");
+				redirect("home/login");			
 			}
 		}
 		else
 		{
-			$this->session->set_flashdata("msg", "This Username and Password is Incorrect !");
-			redirect("home/login");			
+			$this->session->set_flashdata("msg", "Invalid Captcha");
+				redirect("home/login");	
 		}
 
 	}

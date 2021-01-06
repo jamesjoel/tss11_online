@@ -1,23 +1,8 @@
 <?php
 
-class User extends CI_Controller{
+class User extends MY_Controller{
 
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->helper("url");
-		$this->load->library('session');
-		$this->load->model("User_model");
-
-		$this->backdoor();
-
-		$this->id = $this->session->userdata("id");
-	}
-	function backdoor()
-	{
-		if(! $this->session->userdata("is_user_logged_in"))
-			redirect("home");
-	}
+		
 
 	function index()
 	{
